@@ -7,9 +7,9 @@ from firwin import *
 sample_hz = 40000
 N = 8192
 
-#filter = LowPass(sample_hz, cutoff_hz=1000)
+filter = LowPass(sample_hz, cutoff_hz=1000)
 #filter = HighPass(sample_hz, cutoff_hz=2000)
-filter = BandPass(sample_hz, lower_cutoff_hz=1000, higher_cutoff_hz=2000)
+#filter = BandPass(sample_hz, lower_cutoff_hz=1000, higher_cutoff_hz=2000)
 #filter = BandCut(sample_hz, lower_cutoff_hz=1000, higher_cutoff_hz=2000)
 
 w, h = signal.freqz(filter.firwin)
