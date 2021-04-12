@@ -6,7 +6,7 @@ class FIRFilter():
     def filtering(x, firwin, axis):
         axis = x.ndim - 1 if axis is None else axis
 
-        pn = len(firwin)
+        pn = len(firwin) + 2
         dn = x.shape[axis]
 
         if axis == 0:

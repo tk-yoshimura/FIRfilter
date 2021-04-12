@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7b8f4e74-0352-4706-99cf-c8697c00b0be</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>firwin_test.py</StartupFile>
+    <StartupFile>firwin_test_ndim.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
