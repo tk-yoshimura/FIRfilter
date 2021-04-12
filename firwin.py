@@ -8,15 +8,14 @@ class FIRFilter():
     def filtering(x, firwin, axis):
         axis = x.ndim - 1 if axis is None else axis
 
-        margin = 2
-        pn = len(firwin) + margin
+        pn = len(firwin)
         dn = x.shape[axis]
 
         x_pad = padding_edge_reflect(x, pn, axis)
 
         y = signal.lfilter(firwin, 1, x_pad, axis)
 
-        s = axis_slice(axis, [slice(-dn-margin, -margin)], x.ndim)
+        s = axis_slice(axis, [slice(-dn-pn//2, -pn//2)], x.ndim)
 
         y_slice = y[s]
 
