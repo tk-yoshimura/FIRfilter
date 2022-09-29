@@ -8,11 +8,9 @@ FIR filter scipy usage note
 ```py
 from firwin import *
 
-sample_hz = 40000
-N = 8192
+filter = LowPass(sample_hz=40000, cutoff_hz=200)
 
-filter = LowPass(sample_hz, cutoff_hz=200)
-
-x = np.random.normal(size=(2, 3, N))
+batches, channels, length = 2, 3, 8192
+x = np.random.normal(size=(batches, channels, length))
 y = filter(x)
 ```
