@@ -170,7 +170,7 @@ class BandPass():
 class BandCut():
     def __init__(self, sample_hz : float, lower_cutoff_hz : float, higher_cutoff_hz : float, numtaps = 255) -> None:
         nyquist_hz = sample_hz / 2
-        self.__firwin = signal.firwin(numtaps, [lower_cutoff_hz / nyquist_hz, higher_cutoff_hz / nyquist_hz])
+        self.__firwin = signal.firwin(numtaps, [lower_cutoff_hz / nyquist_hz, higher_cutoff_hz / nyquist_hz], pass_zero=True)
         
         self.__sample_hz = sample_hz
         self.__lower_cutoff_hz = lower_cutoff_hz
