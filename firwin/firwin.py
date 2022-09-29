@@ -134,7 +134,7 @@ class BandPass():
 
             self.__firwin = signal.firwin(numtaps, higher_cutoff_hz / nyquist_hz, pass_zero=True)
         elif higher_cutoff_hz >= nyquist_hz:
-            if higher_cutoff_hz >= nyquist_hz * 1.00000001:
+            if higher_cutoff_hz > nyquist_hz:
                 import warnings
                 warnings.warn('Cufoff freq above the nyquist freq was specified for the BandPass. This is ignored.')
 
