@@ -1,5 +1,5 @@
 # FIRfilter
-FIR filter scipy usage note
+FIR(Finite Impulse Response) filter scipy usage note
 
 ![lowpass](https://github.com/tk-yoshimura/FIRfilter/blob/main/figures/lowpass.svg)
 
