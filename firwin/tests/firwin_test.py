@@ -50,7 +50,6 @@ for filter in filters:
 
     t = np.arange(N) / sample_hz
     x = np.sin(t * 10) + np.sin(t * 20 + 1) + np.sin(t * 40 + 2) + np.sin(t * 80 + 3) + np.sin(t * 160 + 4)
-    x += np.sin(t * 320 + 5) + np.sin(t * 640 + 6) + np.sin(t * 1280 + 7) + np.sin(t * 2560 + 8)
     y = filter(x)
 
     plt.figure(figsize=(12, 5))
@@ -58,5 +57,49 @@ for filter in filters:
     plt.plot(t, y, label='fir filtered')
     plt.xlabel('time')
     plt.legend()
+    plt.grid(which='both', axis='both')
+    plt.show()
+
+    x_fft = np.fft.fft(x)
+    x_psd = np.sqrt(np.array([c.real * c.real + c.imag * c.imag for c in x_fft]))
+    y_fft = np.fft.fft(y)
+    y_psd = np.sqrt(np.array([c.real * c.real + c.imag * c.imag for c in y_fft]))
+
+    plt.figure(figsize=(12, 5))
+    plt.xscale("log")
+    plt.plot(freqs[:fn], x_psd[:fn], label='raw')
+    plt.plot(freqs[:fn], y_psd[:fn], label='fir filtered')
+    plt.xlabel('freq. [Hz]')
+    plt.ylabel('PSD')
+    plt.legend()
+    plt.xlim(10, sample_hz)
+    plt.grid(which='both', axis='both')
+    plt.show()
+        
+    x += np.sin(t * 320 + 5) + np.sin(t * 640 + 6) + np.sin(t * 1280 + 7) + np.sin(t * 2560 + 8)
+    x += np.sin(t * 5120 + 9) + np.sin(t * 10240 + 10) + np.sin(t * 20480 + 11) + np.sin(t * 40960 + 12)
+    y = filter(x)
+
+    plt.figure(figsize=(12, 5))
+    plt.plot(t, x, label='raw')
+    plt.plot(t, y, label='fir filtered')
+    plt.xlabel('time')
+    plt.legend()
+    plt.grid(which='both', axis='both')
+    plt.show()
+
+    x_fft = np.fft.fft(x)
+    x_psd = np.sqrt(np.array([c.real * c.real + c.imag * c.imag for c in x_fft]))
+    y_fft = np.fft.fft(y)
+    y_psd = np.sqrt(np.array([c.real * c.real + c.imag * c.imag for c in y_fft]))
+
+    plt.figure(figsize=(12, 5))
+    plt.xscale("log")
+    plt.plot(freqs[:fn], x_psd[:fn], label='raw')
+    plt.plot(freqs[:fn], y_psd[:fn], label='fir filtered')
+    plt.xlabel('freq. [Hz]')
+    plt.ylabel('PSD')
+    plt.legend()
+    plt.xlim(10, sample_hz)
     plt.grid(which='both', axis='both')
     plt.show()
