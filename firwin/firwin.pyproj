@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7b8f4e74-0352-4706-99cf-c8697c00b0be</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tests\firwin_test.py</StartupFile>
+    <StartupFile>tests\firwin_ndim_test.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,7 +23,7 @@
   <ItemGroup>
     <Compile Include="firwin.py" />
     <Compile Include="tests\firwin_test.py" />
-    <Compile Include="tests\firwin_test_ndim.py" />
+    <Compile Include="tests\firwin_ndim_test.py" />
     <Compile Include="tests\paddingutil_test.py" />
   </ItemGroup>
   <ItemGroup>
