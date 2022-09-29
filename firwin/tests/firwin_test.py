@@ -11,6 +11,8 @@ filters = [
     LowPass(sample_hz, cutoff_hz=200),
     HighPass(sample_hz, cutoff_hz=200),
     BandPass(sample_hz, lower_cutoff_hz=300, higher_cutoff_hz=500),
+    BandPass(sample_hz, lower_cutoff_hz=0, higher_cutoff_hz=500),
+    BandPass(sample_hz, lower_cutoff_hz=300, higher_cutoff_hz=20000),
     BandCut(sample_hz, lower_cutoff_hz=300, higher_cutoff_hz=500),
 ]
 
