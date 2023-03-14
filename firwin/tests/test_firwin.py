@@ -22,6 +22,7 @@ for filter in filters:
     a = 20 * np.log10(abs(h));
     f = w / (2 * np.pi) * sample_hz
 
+    plt.clf()
     plt.figure(figsize=(12, 5))
     plt.xscale("log")
     plt.plot(f, a)
@@ -41,6 +42,7 @@ for filter in filters:
     y_fft = np.fft.fft(y)
     y_psd = np.sqrt(np.array([c.real * c.real + c.imag * c.imag for c in y_fft]))
 
+    plt.clf()
     plt.figure(figsize=(12, 5))
     plt.xscale("log")
     plt.plot(freqs[:fn], y_psd[:fn])
@@ -54,6 +56,7 @@ for filter in filters:
     x = np.sin(t * 10) + np.sin(t * 20 + 1) + np.sin(t * 40 + 2) + np.sin(t * 80 + 3) + np.sin(t * 160 + 4)
     y = filter(x)
 
+    plt.clf()
     plt.figure(figsize=(12, 5))
     plt.plot(t, x, label='raw')
     plt.plot(t, y, label='fir filtered')
@@ -67,6 +70,7 @@ for filter in filters:
     y_fft = np.fft.fft(y)
     y_psd = np.sqrt(np.array([c.real * c.real + c.imag * c.imag for c in y_fft]))
 
+    plt.clf()
     plt.figure(figsize=(12, 5))
     plt.xscale("log")
     plt.plot(freqs[:fn], x_psd[:fn], label='raw')
@@ -82,6 +86,7 @@ for filter in filters:
     x += np.sin(t * 5120 + 9) + np.sin(t * 10240 + 10) + np.sin(t * 20480 + 11) + np.sin(t * 40960 + 12)
     y = filter(x)
 
+    plt.clf()
     plt.figure(figsize=(12, 5))
     plt.plot(t, x, label='raw')
     plt.plot(t, y, label='fir filtered')
@@ -95,6 +100,7 @@ for filter in filters:
     y_fft = np.fft.fft(y)
     y_psd = np.sqrt(np.array([c.real * c.real + c.imag * c.imag for c in y_fft]))
 
+    plt.clf()
     plt.figure(figsize=(12, 5))
     plt.xscale("log")
     plt.plot(freqs[:fn], x_psd[:fn], label='raw')

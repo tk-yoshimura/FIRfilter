@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7b8f4e74-0352-4706-99cf-c8697c00b0be</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tests\padboundary_test.py</StartupFile>
+    <StartupFile>tests\test_firwin_channels.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,9 +22,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="firwin.py" />
-    <Compile Include="tests\firwin_test.py" />
-    <Compile Include="tests\firwin_ndim_test.py" />
-    <Compile Include="tests\padboundary_test.py" />
+    <Compile Include="tests\test_firwin.py" />
+    <Compile Include="tests\test_firwin_ndim.py" />
+    <Compile Include="tests\test_firwin_channels.py" />
+    <Compile Include="tests\test_padboundary.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="tests\" />
